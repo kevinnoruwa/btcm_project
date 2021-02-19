@@ -1,0 +1,43 @@
+#side-bar {
+    position: relative;
+    right: 0px;
+    bottom: 0;
+    top: -660px;
+    width: 366px;
+    left: 1162px;
+}
+
+#side-bar .about-me-box .img {
+   text-align: center;
+}
+
+
+#side-bar .about-me-box .img img {
+    width: 152px;
+    height: 152px;
+    text-align: center;
+}
+
+
+
+
+#side-bar .about-me-box p{
+    text-align: center;
+    padding: 22px;
+    font-size: 0.8rem;
+    padding: 0 22px;
+    
+}
+
+
+#side-bar .about-me-box .fa-twitter {
+    color: #1DA1F2;
+    
+}
+
+#side-bar .about-me-box .fa-youtube-play{
+    color: #FF0000
+    
+}
+
+
