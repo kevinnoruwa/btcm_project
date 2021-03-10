@@ -10,7 +10,7 @@
 
     <?php wp_head() ?>
 </head>
-<body>
+<body <? body_class(); ?>>
 <section id="header">
     <div class="inside">
 
@@ -18,26 +18,25 @@
         <nav>
             <a href="/">Home</a>
             
-            <a href="http://localhost:8888/about/">About</a>
+            <a href="/about/">About</a>
             
-            <a href="http://localhost:8888/privacy-policy/">Privacy</a>
+            <a href="/privacy-policy/">Privacy</a>
         </nav>
 
         <div class="header-text">
             <a href="/">
-                <h1 class="">Breaking The Chains Media</h1>
+                <h1 class="">BTCM</h1>
             </a>
            
-            <h6 class="">" We the people hold the power - remember that"</h6>
+            <h6 class="">"Shining a light on the news"</h6>
         </div>
 
     
     </div>
-    <div class="search-icon group">
+    <!-- <div class="search-icon group">
         <div class="contain">
             <i class="fa fa-search" aria-hidden="true"></i>
             <input type="text">
-            
         </div>
-    </div>
+    </div> -->
 </section>

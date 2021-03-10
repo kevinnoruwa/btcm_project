@@ -1,69 +1,31 @@
 <?php echo get_header() ?>
 
-<?php 
-         // setting uo the pod service 
-            $mypod = pods("my_post");
-            $mypod->find("name ASC");
-?>
+
 <section id="content">
     <h2><i class="fa fa-star" aria-hidden="true"></i> Recent post</h2>
     <div class="inside">
-    <?php while($mypod->fetch()) : ?>
-       <?php
-        // get our varibles 
-          $article_name= $mypod->field('article_name');
-          $permalink = $mypod->field('permalink');
-          $post_date = $mypod->field('post_date ');
-          $article_date = $mypod->field('article_date');
-          $article_time= $mypod->field('article_time');
-
-          $row = $mypod->row();
-                $post_id = $row['ID'];
-                if (!function_exists('get_post_featured_image')) {
-                  function get_post_featured_image($post_id, $size) {
-                    $return_array = [];
-                    $image_id = get_post_thumbnail_id($post_id);
-                    $image = wp_get_attachment_image_src($image_id, $size);
-                    $image_url = $image[0];
-                    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                    $image_post = get_post($image_id);
-                    $image_caption = $image_post->post_excerpt;
-                    $image_description = $image_post->post_content;
-                    $return_array['id'] = $image_id;
-                    $return_array['url'] = $image_url;
-                    $return_array['alt'] = $image_alt;
-                    $return_array['caption'] = $image_caption;
-                    $return_array['description'] = $image_description;
-                    return $return_array;
-                  }
-                }
-                $image_properties = get_post_featured_image($post_id, 'full');
-
-
-         
-          ?>
-          
-    
-        <a href="<?php echo $permalink?>">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <a href="<?php the_permalink()?>">
         <div class="column">
             <div class="box">
-                <div class="image">
-                    <img src='<?php echo $image_properties[url]; ?>' alt="">
+                <div style="background: url('<?php the_post_thumbnail_url('medium'); ?>');" class="image">
+                    <img src='<?php the_post_thumbnail_url('medium')?>' alt="">
                 </div>
-                <h3 class="title"><?php echo $article_name ?></h3>
+                <h3 class="title"><?php echo the_title()?></h3>
                 <div class="small-text">
                     <div>
-                        <span><?php echo $article_date ?></span>
-                        <span><?php echo $article_time ?></span>
+                        <span><?php echo get_the_date() ?></span>
                     </div>
-                    <div> by kev</div>
+                    <div>by Kev</div>
                 </div>
             </div>
         </div>
         </a>
-        <?php endwhile; ?>
-    </div>
+        <?php endwhile; else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <?php endif; ?>
 
+        
 </section>
 
 

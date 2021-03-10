@@ -40,7 +40,8 @@
     text-align: center; 
 }
 #content .inside .column .box .title  {
-    color:#1e1e1e 
+    color:#1e1e1e;
+    margin: 10px 0 0;
 }
 #content .inside .column .box .image {
     width: 100%;   

@@ -1,0 +1,42 @@
+#show-page {
+    padding: 250px 0 250px;
+
+}
+
+
+#show-page .inside {
+    width: 1200px;
+    margin: 0 auto;
+}
+#show-page .inside .small-text {
+   
+}
+#show-page img {
+    width: 500px;
+}
+
+#show-page h1  {
+    text-align: center;
+    margin: 0px 0 20px;
+}
+
+
+#show-page .content {
+    text-align: center;
+}
+
+
+#show-page .image {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+#show-page p {
+    text-align: justify;
+    line-height: 1.5;
+    width: 1200px;
+    margin: 30px auto;
+
+}
